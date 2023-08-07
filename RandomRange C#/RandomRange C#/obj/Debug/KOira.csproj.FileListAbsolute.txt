@@ -1,0 +1,8 @@
+C:\Users\172172\source\repos\KOira\KOira\bin\Debug\KOira.exe.config
+C:\Users\172172\source\repos\KOira\KOira\bin\Debug\KOira.exe
+C:\Users\172172\source\repos\KOira\KOira\bin\Debug\KOira.pdb
+C:\Users\172172\source\repos\KOira\KOira\obj\Debug\KOira.csproj.AssemblyReference.cache
+C:\Users\172172\source\repos\KOira\KOira\obj\Debug\KOira.csproj.SuggestedBindingRedirects.cache
+C:\Users\172172\source\repos\KOira\KOira\obj\Debug\KOira.csproj.CoreCompileInputs.cache
+C:\Users\172172\source\repos\KOira\KOira\obj\Debug\KOira.exe
+C:\Users\172172\source\repos\KOira\KOira\obj\Debug\KOira.pdb

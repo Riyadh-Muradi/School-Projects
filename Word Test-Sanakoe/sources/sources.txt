@@ -1,0 +1,51 @@
+Font {
+    Alata-Regular
+
+    https://fonts.google.com/specimen/Alata?query=alata
+
+    Link (HTML) 
+    -   <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    
+    Link (CSS)
+    -   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+        </style>
+
+    Usage (HTML, CSS)
+    -   font-family: 'Alata', sans-serif;
+}
+
+Ripple (Click Effect) {
+    Usage (CSS)
+    -   .ripple {
+        background-position: center;
+        transition: background 0.8s;
+        }
+        .ripple:hover {
+        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+            center/15000%;
+        }
+        .ripple:active {
+        background-color: #5890dd;
+        background-size: 100%;
+        transition: background 0s;
+    }
+}
+
+Colors {
+    Usage (HTML, CSS)
+    -   Font Color = #7e7e7f;
+        Font Hover Color = #FFFFFF;
+        Background Color = #151618;
+        Container Color = #1f1f21;
+        BoxShadow Color = #151618;
+        Button Background Color = #2e75de;
+        Other Button Backgruond Color = #262629;
+        Button Ripple Hover Colors = ffffff40;
+
+
+}
+
+Full credits to Diar. Joona was side helper.
