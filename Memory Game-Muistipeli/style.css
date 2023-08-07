@@ -1,0 +1,30 @@
+/* Body */
+body{
+  margin: auto;
+  width: 400px;
+  background-color: #111111;
+}
+/* Body END */
+
+/* Grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+}
+/* Grid END */
+
+/* Main Text */
+h2 {
+  color: white;
+  text-align: center;
+}
+/* Main Text END */
+
+/* Secound Text */
+h3 {
+  color: white;
+  text-align: center;
+}
+/* Secound Text END */
