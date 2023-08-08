@@ -1,4 +1,3 @@
-
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
@@ -24,15 +23,19 @@ public class SumOfAListTest {
             {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1}
         };
 
+        // Iterate through different sets of input numbers
         for (int[] input : inputs) {
             check(input);
         }
     }
 
+    // Method to perform the test on input numbers
     private void check(int[] inputNumbers) {
         int oldOut = io.getSysOut().length();
         String input = "";
         int sum = 0;
+        
+        // Construct the input and calculate the sum
         for (int num : inputNumbers) {
             if (num != -1) {
                 sum += num;
@@ -41,19 +44,26 @@ public class SumOfAListTest {
             input += num + "\n";
         }
 
+        // Set the input for the program and call its main method
         io.setSysIn(input);
         callMain(SumOfAList.class);
         String out = io.getSysOut().substring(oldOut);
 
+        // Extract the last printed number (sum) from the program's output
         int result = getLastNumber(out);
 
-        input = input.replaceAll("\n", " ").trim();
-        input = input.replaceAll(" ", " + ").trim();
-        String errorMsg = "the sum " + input + " should be " + sum + " you printed \"" + result + "\"";
+        // Prepare input string for error message
+        String errorMsgInput = input.replaceAll("\n", " ").trim();
+        errorMsgInput = errorMsgInput.replaceAll(" ", " + ").trim();
+        String errorMsg = "the sum " + errorMsgInput + " should be " + sum + " you printed \"" + result + "\"";
+
+        // Ensure that the program is printing something
         assertTrue("you're not printing anything!", out.length() > 0);
+        // Check if the calculated sum matches the printed result
         assertEquals(errorMsg, sum, result);
     }
 
+    // Method to invoke the main method of a class using Reflection
     private void callMain(Class kl) {
         try {
             kl = ReflectionUtils.newInstanceOfClass(kl);
@@ -67,6 +77,7 @@ public class SumOfAListTest {
         }
     }
 
+    // Method to extract the last number from a given string
     private static int getLastNumber(String inputStr) {
         String patternStr = "(?s).*?(\\d+)\\s*$";
 
