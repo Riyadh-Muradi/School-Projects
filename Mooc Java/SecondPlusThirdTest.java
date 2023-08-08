@@ -1,4 +1,3 @@
-
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
 import fi.helsinki.cs.tmc.edutestutils.ReflectionUtils;
@@ -22,23 +21,29 @@ public class SecondPlusThirdTest {
         }
     }
 
+    // Method to perform the test on input strings
     private void check(String... strs) {
         int oldOut = io.getSysOut().length();
 
+        // Construct the input string
         String in = "";
         for (int i = 0; i < strs.length - 1; i++) {
             in += strs[i] + "\n";
         }
 
+        // Set the input for the program and call its main method
         io.setSysIn(in);
         callMain(SecondPlusThird.class);
         String out = io.getSysOut().substring(oldOut);
 
+        // Ensure that the program is printing something
         assertTrue("you're not printing anything!", out.length() > 0);
 
+        // Extract the last printed output from the program
         String result = getLast(out);
         String expectedResult = strs[strs.length - 1];
 
+        // Check if each number from input is expected to be in output
         for (int i = 0; i < strs.length - 1; i++) {
             String num = strs[i];
             if (num.equals(expectedResult)) {
@@ -49,15 +54,19 @@ public class SecondPlusThirdTest {
                 continue;
             }
 
+            // Fail if a number that wasn't supposed to be in output is found
             if (out.contains(num)) {
                 fail("Input:\n" + in + "\nThe output was not expected to contain \"" + num + "\".\nThe output was:\n" + out);
             }
         }
 
+        // Construct an error message if the result doesn't match the expected
         String errorMsg = "Input:\n" + in + "\n\n Expected output: \"" + expectedResult + "\", the output was: \"" + result + "\"\n";
+        // Check if the result matches the expected result
         assertEquals(errorMsg, expectedResult, result);
     }
 
+    // Method to invoke the main method of a class using Reflection
     private void callMain(Class kl) {
         try {
             kl = ReflectionUtils.newInstanceOfClass(kl);
@@ -73,6 +82,7 @@ public class SecondPlusThirdTest {
         }
     }
 
+    // Method to extract the last piece of text from a given string
     private static String getLast(String inputStr) {
         String[] pieces = inputStr.split("\\s+");
         return pieces[pieces.length - 1];
